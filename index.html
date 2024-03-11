@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ochalia Vica | VTuber Indonesia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .poppins-medium {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .poppins-semibold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .poppins-bold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .poppins-regular-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .poppins-medium-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .poppins-semibold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .poppins-bold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+
+        :root {
+            scroll-behavior: smooth;
+            scroll-padding: 20px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            text-align: center;
+            background-color: #ff9cce;
+        }
+
+        h1,
+        h2 {
+            color: #5f144fce;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 30px;
+            border-bottom: 2px solid #6f00ffce;
+            padding-bottom: 5px;
+        }
+
+        a:link,
+        a:visited {
+            color: #fe05ccce;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        section,
+        header {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-inline: 10px;
+            overflow: hidden;
+        }
+
+        .content {
+            width: 100%;
+            flex: 2;
+        }
+
+        .content table {
+            font-size: 1.5rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+            width: 100%;
+            background-color: #ffbdde;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+            border-radius: 6%;
+        }
+
+        div.avatar img {
+            width: 300px;
+            /* object-fit: cover; */
+        }
+
+        .sosmed {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex: 1;
+        }
+
+        .hobi {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* .hobi::before {
+            content: '';
+            background-color: #6f00ffce;
+            width: 2px;
+        } */
+
+        .divider {
+            width: 2px;
+            height: 200px;
+            min-height: 100%;
+            background-color: #6f00ffce;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* .debut {
+            width: 100%;
+            height: 100%;
+        } */
+
+        table {
+            width: 100%;
+            text-align: left;
+            font-weight: bold;
+            padding-inline: 2rem;
+            /* border: 2px red solid; */
+        }
+
+        iframe {
+            width: 600px;
+            aspect-ratio: 16/9;
+        }
+
+        footer {
+            background-color: #fbf3dc;
+            padding-block: 20px;
+            /* padding-left: 10px; */
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        footer h2 a:first-child {
+            margin-left: 10px;
+        }
+
+        footer h2 a:not(:first-child)::before {
+            content: '';
+            position: relative;
+            width: 2px;
+            min-height: 10px;
+            left: 0;
+            padding-left: 10px;
+            border-left: 2px solid #6f00ffce;
+        }
+
+        footer a:link,
+        footer a:visited {
+            color: #060202;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 874px) {
+            :root {
+                font-size: 14px;
+            }
+
+            .content table {
+                font-size: 1.1rem;
+            }
+
+            iframe {
+                width: 400px;
+                aspect-ratio: 16/9;
+            }
+
+            footer a {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            :root {
+                font-size: 12px;
+            }
+
+            .wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .profile {
+                order: -1;
+            }
+
+            .avatar img {
+                width: 200px;
+            }
+
+            .content table {
+                font-size: 1.1rem;
+            }
+
+            .divider {
+                display: none;
+            }
+
+            iframe {
+                width: 300px;
+                aspect-ratio: 16/9;
+            }
+
+            footer a {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media screen and (max-width: 560px) {
+            footer a {
+                font-size: .8rem;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            :root {
+                font-size: 11px;
+            }
+
+            .avatar img {
+                width: 160px !important;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            :root {
+                font-size: 10px;
+            }
+
+            footer a {
+                font-size: .7rem;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+
+            iframe {
+                width: 200px;
+            }
+
+            footer a {
+                font-size: .5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Biodata Diri -->
+    <header id="top">
+        <h1>ochalia vica</h1>
+    </header>
+
+    <section id="info">
+
+        <h2>kanjeng ratu</h2>
+
+        <div class="wrapper">
+            <div class="content">
+                <table>
+                    <colgroup>
+                        <col width="10%">
+                        <col width="60%">
+                    </colgroup>
+                    <tr>
+                        <td>Nickname</td>
+                        <td>: Ocha, Vica, Caca</td>
+                    </tr>
+                    <tr>
+                        <td>Birthday</td>
+                        <td>: 30 July</td>
+                    </tr>
+                    <tr>
+                        <td>Zodiak</td>
+                        <td>: Leo</td>
+                    </tr>
+                    <tr>
+                        <td>MBTI</td>
+                        <td>: ENFP </td>
+                    </tr>
+                    <tr>
+                        <td>UMUR</td>
+                        <td>: Legal</td>
+                    </tr>
+                    <tr>
+                        <td>Language</td>
+                        <td>: Indonesia, English, Sign Language, Bahasa G</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>: Seberat tingkat Stress saat main Visual Novel</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">
+                    <img src="https://cdn.discordapp.com/attachments/1213064258925895692/1213381021735587840/Ocha.png?ex=65fe7ea3&is=65ec09a3&hm=73fa0ee226bf39dbcacecb1b399286db6e4bb2de99d3dec93e9a3584769760b2&"
+                        alt="Avatar Ochalia Vica">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="debut">
+        <h2>Debut Stream</h2>
+
+        <div class="debut">
+            <iframe src="https://www.youtube.com/embed/zLhllJ2omrg?si=a34vJymHu3JNe_zg"
+                title="Debut stream Ochalia Vica" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+
+    <!-- Sosmed -->
+    <section id="sosmed">
+        <h2>sosmed & hobi kanjeng</h2>
+        <div class="wrapper">
+            <div class="sosmed">
+                <table>
+                    <tr>
+                        <td>Instagram</td>
+                        <td> : <a href="https://www.instagram.com/ochaliavica/" target="_blank"> IG_Mbak_Ocha</a> :D
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Twitter</td>
+                        <td> : <a href="https://twitter.com/OchaliaVica" target="_blank"> X_Skill</a> :\</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tiktok</td>
+                        <td> : <a href="https://www.tiktok.com/@ochalia.vica" target="_blank"> TT_Issue</a> :|</td>
+                    </tr>
+
+                    <tr>
+                        <td>Facebook</td>
+                        <td> : <a href="https://www.facebook.com/profile.php?id=61550565658268&amp;locale=id_ID"
+                                target="_blank"> FB_Inimah</a> :{ </td>
+                    </tr>
+
+                    <tr>
+                        <td>Youtube</td>
+                        <td> : <a href="https://www.youtube.com/@OchaliaVica" target="_blank"> Yt_bjirr</a> -_- </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="divider"></div>
+            <div class="hobi">
+                <table>
+                    <tr>
+                        <td>Hobi Kesukaan</td>
+                        <td>: Main game Visual Novel, Puzzle, Strategi hihihi</td>
+                    </tr>
+                    <tr>
+                        <td>Hobi Lain</td>
+                        <td>: Berkata Tai, Kasar, Skill Issue, nge-game bayikk</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- skill -->
+    <section id="Ket">
+        <h2>skill kanjeng ratu</h2>
+        <table>
+            <tr>
+                <td>skill Utama</td>
+                <td>: Resink, Kang Gimmik, Rawr, Twerking Master, Skem</td>
+            </tr>
+            <tr>
+                <td>skill Lain</td>
+                <td>: Komunikasi, Kerjasama Sendiri, Seperti Biasa</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="fam">
+        <h2>PETS-NYA OCHA</h2>
+        <table style="width:100%">
+            <tr>
+                <td>Chopet Seng/Mod</td>
+                <td>: Randi Ganteng</td>
+            </tr>
+            <tr>
+                <td>Pekerjaan</td>
+                <td>: Moderator Youtube paling baik, sopan dan ramah</td>
+            </tr>
+            <tr>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Chopet Atmin-1</td>
+                <td>: JX</td>
+            </tr>
+            <tr>
+                <td>Pekerjaan</td>
+                <td>: Atmin Discord pembaik sedikit</td>
+            </tr>
+            <tr>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Chopet Atmin-2</td>
+                <td>: Rozin Resink</td>
+            </tr>
+            <tr>
+                <td>Pekerjaan</td>
+                <td>: Atmin Discord pembully dan resink</td>
+            </tr>
+            <tr>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Chopet Pahlawan</td>
+                <td>: Hataken</td>
+            </tr>
+            <td>Pekerjaan</td>
+            <td>: Ngurusin design Web Ocha</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <h2>
+            <a href="#info">Informasi Ocha</a>
+            <a href="#debut">Debut</a>
+            <a href="#sosmed">Sosmed & Hobi</a>
+            <a href="#Ket">skill</a>
+            <a href="#top">Balik ke Atas</a>
+        </h2>
+    </footer>
+</body>
+
+</html>
