@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -202,6 +203,12 @@
             white-space: nowrap;
         }
 
+        footer h2 {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
         footer h2 a:first-child {
             margin-left: 10px;
         }
@@ -269,8 +276,7 @@
             }
 
             iframe {
-                width: 300px;
-                aspect-ratio: 16/9;
+                width: 100%;
             }
 
             footer a {
@@ -304,10 +310,9 @@
             }
         }
 
-        @media screen and (max-width: 375px) {
-
-            iframe {
-                width: 200px;
+        @media screen and (max-width: 320px) {
+            footer {
+                padding: 10px 0;
             }
 
             footer a {
@@ -368,8 +373,7 @@
 
             <div class="profile">
                 <div class="avatar">
-                    <img src="assets/Ocha.png"
-                        alt="Avatar Ochalia Vica">
+                    <img src="assets/Ocha.png" alt="Avatar Ochalia Vica">
                 </div>
             </div>
         </div>
@@ -382,8 +386,7 @@
         <div class="debut">
             <iframe src="https://www.youtube.com/embed/zLhllJ2omrg?si=a34vJymHu3JNe_zg"
                 title="Debut stream Ochalia Vica" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
         </div>
     </section>
 
