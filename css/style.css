@@ -79,7 +79,7 @@ header div {
 header div h1 {
     text-align: center;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--textPrimaryColor);
     letter-spacing: 1px;
     text-transform: uppercase;
