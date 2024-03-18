@@ -1,82 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-
-.poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.poppins-medium {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-}
-
-.poppins-semibold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-}
-
-.poppins-bold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.poppins-regular-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.poppins-medium-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-}
-
-.poppins-semibold-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-}
-
-.poppins-bold-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
-    scroll-behavior: smooth;
-    scroll-padding: 20px;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     --bgColor: #ff9cce;
     --accentColor: #8B31FF;
+    --accentColorSecondary: rgba(255, 38, 147, 0.5);
     --textPrimaryColor: #5f144fce;
     --textSecondaryColor: #fe05ccce;
 }
 
+*,
+*::before,
+*::after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding: 90px;
+}
+
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    text-align: center;
     background-color: var(--bgColor);
 }
 
-header div {
+main {
+    padding: 40px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+header.navbar-menu {
+    position: sticky;
+    width: 100%;
+    background: var(--accentColorSecondary);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    border: 1px solid rgba(242, 102, 35, 0.26);
+    inset-block-start: 0;
+    padding: .5rem 3rem;
+    z-index: 20;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    margin-inline: auto;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    font-family: 'Bowlby One SC';
+    font-size: 1.7rem;
+}
+
+.logo a {
+    color: var(--textPrimaryColor) !important;
+    text-shadow: 1px 2px 1px white;
+    white-space: nowrap;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar ul a {
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.navbar ul a:hover,
+.navbar ul a:focus-visible {
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, .08);
+}
+
+.unlist {
+    list-style: none !important;
+}
+
+section#beranda div {
     position: relative;
     width: 90%;
     max-width: 500px;
     margin: auto auto;
 }
 
-header div h1 {
+section#beranda div h1 {
     text-align: center;
     font-size: 30px;
     font-weight: 400;
@@ -89,8 +109,8 @@ header div h1 {
     align-items: center;
 }
 
-header div h1:after,
-header div h1:before {
+section#beranda div h1:after,
+section#beranda div h1:before {
     content: " ";
     display: block;
     border-bottom: 1px solid var(--accentColor);
@@ -117,16 +137,19 @@ a:hover {
     text-decoration: underline;
 }
 
-section,
-header {
+section {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-header {
+section:last-child {
+    margin-bottom: 0;
+}
+
+section#top {
     text-align: center;
 }
 
@@ -136,7 +159,6 @@ header {
     align-items: center;
     flex-wrap: wrap;
     padding-inline: 10px;
-    overflow: hidden;
 }
 
 .content {
@@ -157,21 +179,13 @@ header {
     flex: 1;
     width: 100%;
     background-color: #ffbdde;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); */
     border-radius: 6%;
 }
 
 div.avatar img {
     width: 300px;
     /* object-fit: cover; */
-}
-
-.sosmed {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex: 1;
 }
 
 .hobi {
@@ -181,26 +195,6 @@ div.avatar img {
     width: 100%;
     flex: 1;
 }
-
-/* .hobi::before {
-            content: '';
-            background-color: #6f00ffce;
-            width: 2px;
-        } */
-
-.divider {
-    width: 2px;
-    height: 200px;
-    min-height: 100%;
-    background-color: var(--accentColor);
-    object-fit: cover;
-    object-position: center;
-}
-
-/* .debut {
-            width: 100%;
-            height: 100%;
-        } */
 
 table {
     width: 100%;
@@ -215,42 +209,94 @@ iframe {
     aspect-ratio: 16/9;
 }
 
+aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: max-content;
+    height: 100vh;
+    height: 100dvh;
+    top: 40px;
+    left: 0;
+    z-index: 99;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0;
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    background-color: var(--accentColorSecondary);
+    font-size: 2rem;
+}
+
+aside ul a {
+    width: 100%;
+    padding: 10px;
+}
+
+aside ul a:hover {
+    background-color: var(--accentColorSecondary);
+    text-decoration: none;
+}
+
+aside ul a:hover i {
+    color: var(--iconColor);
+    animation: rotate .5s forwards;
+}
+
+@keyframes rotate {
+
+    0%,
+    50% {
+        rotate: 180deg;
+    }
+
+    50%,
+    100% {
+        rotate: 360deg;
+    }
+}
+
+aside ul a li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+aside ul a li i {
+    color: white;
+}
+
 footer {
-    background-color: #fbf3dc;
+    width: 100%;
+    padding: 0 40px 20px 40px;
+}
+
+footer div {
+    background-color: white;
     padding-block: 20px;
-    /* padding-left: 10px; */
     text-align: center;
-    bottom: 0;
     width: 100%;
     border-radius: 8px;
     white-space: nowrap;
 }
 
-footer h2 {
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-footer h2 a:first-child {
-    margin-left: 10px;
-}
-
-footer h2 a:not(:first-child)::before {
-    content: '';
-    position: relative;
-    width: 2px;
-    min-height: 10px;
-    left: 0;
-    padding-left: 10px;
-    border-left: 2px solid var(--accentColor);
-}
-
 footer a:link,
 footer a:visited {
-    color: #060202;
-    margin-right: 10px;
+    color: var(--textPrimaryColor);
     font-weight: bold;
+}
+
+footer span {
+    color: var(--textSecondaryColor);
 }
 
 @media screen and (max-width: 874px) {
@@ -267,14 +313,19 @@ footer a:visited {
         aspect-ratio: 16/9;
     }
 
-    footer a {
+    footer div a {
         font-size: 1.1rem;
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
     :root {
         font-size: 12px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .wrapper {
@@ -302,13 +353,13 @@ footer a:visited {
         width: 100%;
     }
 
-    footer a {
+    footer div a {
         font-size: 1.1rem;
     }
 }
 
 @media screen and (max-width: 560px) {
-    footer a {
+    footer div a {
         font-size: .8rem;
     }
 }
@@ -318,13 +369,26 @@ footer a:visited {
         font-size: 11px;
     }
 
-    header div h1 {
+    .navbar ul {
+        gap: 0;
+        padding: 0;
+    }
+
+    .navbar ul a {
+        padding: 5px 10px;
+    }
+
+    section#beranda div h1 {
         font-size: 2rem;
         gap: 10px;
     }
 
     .avatar img {
         width: 160px !important;
+    }
+
+    footer {
+        padding-inline: 40px;
     }
 }
 
@@ -333,22 +397,34 @@ footer a:visited {
         font-size: 10px;
     }
 
-    footer a {
-        font-size: .7rem;
+    main {
+        padding: 20px;
+    }
+
+    footer {
+        padding-inline: 20px;
+    }
+
+    footer p a {
+        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 320px) {
-    header div h1 {
+    main {
+        padding: 15px;
+    }
+
+    section#bearanda div h1 {
         font-size: 1.5rem;
         gap: 8px;
     }
 
-    footer {
-        padding: 10px 0;
+    aside ul {
+        font-size: 1.5rem;
     }
 
-    footer a {
-        font-size: .5rem;
+    footer {
+        padding-inline: 15px;
     }
 }
