@@ -1,64 +1,52 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const cardWrapper = document.querySelector('.card-wrapper');
-    const users = await getUser(['702099754355785740', '430726683520139276', '333205744205692929', '367240995391143937']);
+    const sidebarBtn = document.querySelector(".sidebar-btn");
+    const users = await getUser(['430726683520139276', '702099754355785740', '367240995391143937']);
     cardWrapper.innerHTML = await generateCard(users);
+    sidebarBtn.addEventListener("click", sidebarToggle);
 });
 
 async function generateCard(data) {
     const extra = [
         {
-            role: 'Moderator Youtube',
-            social: `
-            <li title="Twitter">
-                <a href="https://twitter.com/Randicrg" class="fa-brands fa-x-twitter" aria-hidden="true"></a>
-            </li>
-            <li title="Steam">
-                <a href="https://steamcommunity.com/profiles/76561199095601650" class="fa-brands fa-steam" aria-hidden="true"></a>
-            </li>
-            `
-        },
-        {
-            role: 'Atmin Discrot 1',
+            role: 'Atmin Discord',
             social: `
             <li title="Facebook">
-                <a href="https://web.facebook.com/rzn.grovev" class="fa-brands fa-facebook" aria-hidden="true"></a>
+                <a href="https://web.facebook.com/rzn.grovev" target="_blank" class="fa-brands fa-facebook" aria-hidden="true"></a>
             </li>
             <li title="Twitter">
-                <a href="https://twitter.com/ZinSphy" class="fa-brands fa-x-twitter" aria-hidden="true"></a>
+                <a href="https://twitter.com/ZinSphy" target="_blank" class="fa-brands fa-x-twitter" aria-hidden="true"></a>
             </li>
             `
         },
         {
-            role: 'Atmin Discrot 2',
+            role: 'Moderator Youtube',
             social: `
-            <li title="Instagram">
-                <a href="https://www.instagram.com/jx696969" class="fa-brands fa-instagram" aria-hidden="true"></a>
-            </li>
-            <li title="Twitter">
-                <a href="https://twitter.com/JX69696969" class="fa-brands fa-x-twitter" aria-hidden="true"></a>
-            </li>
             <li title="Youtube">
-                <a href="https://www.youtube.com/channel/UCvXTcA2NfXJAw_8-DZMsTSQ" class="fa-brands fa-youtube" aria-hidden="true"></a>
+                <a href="https://www.youtube.com/@randibosen" target="_blank" class="fa-brands fa-youtube" aria-hidden="true"></a>
             </li>
-            <li title="Twitch">
-                <a href="https://www.twitch.tv/jx696969" class="fa-brands fa-twitch" aria-hidden="true"></a>
+            <li title="Twitter">
+                <a href="https://twitter.com/Randicrg" target="_blank" class="fa-brands fa-x-twitter" aria-hidden="true"></a>
+            </li>
+            <li title="Steam">
+                <a href="https://steamcommunity.com/profiles/76561199095601650" target="_blank" class="fa-brands fa-steam" aria-hidden="true"></a>
             </li>
             `
         },
         {
-            role: 'Kang Desain Web',
+            role: 'Pelukis Web',
             social: `
             <li title="Instagram">
-                <a href="https://www.instagram.com/hatakenpro999" class="fa-brands fa-instagram" aria-hidden="true"></a>
+                <a href="https://www.instagram.com/hatakenpro999" target="_blank" class="fa-brands fa-instagram" aria-hidden="true"></a>
             </li>
             <li title="Twitter">
-                <a href="https://twitter.com/Hataken16" class="fa-brands fa-x-twitter" aria-hidden="true"></a>
+                <a href="https://twitter.com/Hataken16" target="_blank" class="fa-brands fa-x-twitter" aria-hidden="true"></a>
             </li>
             <li title="Discord">
-                <a href="https://discord.gg/mMMBhKw" class="fa-brands fa-discord" aria-hidden="true"></a>
+                <a href="https://discord.gg/mMMBhKw" target="_blank" class="fa-brands fa-discord" aria-hidden="true"></a>
             </li>
             <li title="Website">
-                <a href="https://hataken.eu.org" class="fa-solid fa-globe" aria-hidden="true"></a>
+                <a href="https://hataken.eu.org" target="_blank" class="fa-solid fa-globe" aria-hidden="true"></a>
             </li>
             `
         }
@@ -112,7 +100,7 @@ async function getUser(id) {
                 body: JSON.stringify({ id: userId }) // Perhatikan JSON.stringify
             };
 
-            const response = await fetch('http://135.181.141.62:4118/api/discord/getuser/', options);
+            const response = await fetch('https://bots.hataken.eu.org/api/discord/getuser/', options);
             return response.json();
         });
 
@@ -123,3 +111,16 @@ async function getUser(id) {
         console.log(error);
     }
 }
+
+function sidebarToggle() {
+    const elAside = document.querySelector("aside");
+    const elSidebar = document.querySelector(".sidebar-content");
+    const sidebarBtn = document.querySelector(".sidebar-btn");
+    const sidebarIcon = document.querySelector(".sidebar-btn i");
+
+    elAside.classList.toggle("backdrop");
+    elSidebar.classList.toggle("show");
+    sidebarBtn.classList.toggle("show");
+    sidebarIcon.classList.toggle("rotate");
+    document.body.classList.toggle("overflow-hidden");
+};

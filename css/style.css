@@ -24,6 +24,10 @@ body {
     background-color: var(--bgColor);
 }
 
+body.overflow-hidden {
+    overflow: hidden;
+}
+
 main {
     padding: 40px;
     line-height: 1.6;
@@ -338,6 +342,7 @@ iframe {
     .our-team .social li a:hover {
         color: var(--accentColor);
         background-color: #f7f5ec;
+        cursor: pointer;
     }
 
     .our-team:hover .social {
@@ -368,7 +373,7 @@ iframe {
 
 /* ============================== */
 
-aside {
+/* aside {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -432,7 +437,137 @@ aside ul a li {
 
 aside ul a li i {
     color: white;
+} */
+
+aside {
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: -99;
+    transition: background-color .5s ease;
+    color: white;
 }
+
+aside.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background-color: #0005;
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    z-index: 99;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 999;
+    background-color: #ff2692c9;
+    transition: left .5s ease;
+}
+
+.sidebar-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    aspect-ratio: 1/1;
+    position: absolute;
+    bottom: 0;
+    left: 300px;
+    background-color: #ff269259;
+    width: max-content;
+    padding: 1rem;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    cursor: pointer;
+}
+
+.sidebar-btn i {
+    padding: 0;
+    margin: 0;
+    transition: rotate .5s ease;
+}
+
+.sidebar-btn i.rotate {
+    rotate: 180deg;
+}
+
+.sidebar-btn.show {
+    background-color: #ff2692c9;
+}
+
+.sidebar-btn:hover {
+    background-color: var(--accentColor);
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+}
+
+.sidebar-content.show {
+    left: 0;
+}
+
+.socmed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 2;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 1.2rem;
+    list-style: none;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+.socmed li a {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: transparent;
+    border: 4px solid transparent;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+
+.socmed li a:hover,
+.socmed li a:focus-visible {
+    background-color: var(--accentColor);
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+}
+
+.socmed li i {
+    margin-right: 10px;
+}
+
+.sidebar-footer {
+    text-align: center;
+}
+
+.sidebar-footer a {
+    color: var(--secondary-bg);
+    border-bottom: 4px solid transparent;
+    transition: all .2s ease;
+}
+
+.sidebar-footer a:hover {
+    color: white;
+    border-bottom: 4px solid white;
+}
+
 
 footer {
     width: 100%;
@@ -579,8 +714,17 @@ footer span {
         gap: 8px;
     }
 
-    aside ul {
-        font-size: 1.5rem;
+    .sidebar-content {
+        left: -200px;
+        width: 200px;
+    }
+
+    .sidebar-content {
+        width: 200px;
+    }
+
+    .sidebar-btn {
+        left: 200px;
     }
 
     footer {
